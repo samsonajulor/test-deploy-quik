@@ -43,3 +43,4 @@ This application is designed to be deployed on QuikDB Compute:
 - Node.js
 - Express.js
 - Pure HTML/CSS (no build step required)
+# test-deploy-quik
