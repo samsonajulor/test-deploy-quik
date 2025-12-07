@@ -1,0 +1,16 @@
+{
+  "name": "test-deploy-quik",
+  "version": "1.0.0",
+  "description": "Test application for QuikDB Compute deployment",
+  "main": "server.js",
+  "scripts": {
+    "start": "node server.js",
+    "dev": "node server.js"
+  },
+  "keywords": ["test", "nodejs", "express"],
+  "author": "QuikDB",
+  "license": "MIT",
+  "dependencies": {
+    "express": "^4.18.2"
+  }
+}
