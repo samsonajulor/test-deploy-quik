@@ -114,3 +114,23 @@ app.listen(PORT, () => {
   console.log(`✅ Server running on port ${PORT}`);
   console.log(`🌐 Visit http://localhost:${PORT}`);
 });
+
+// Continuous logging for testing log streaming
+let logCounter = 0;
+setInterval(() => {
+  logCounter++;
+  const logLevels = ['info', 'warn', 'error', 'debug'];
+  const level = logLevels[logCounter % 4];
+  
+  console.log(JSON.stringify({
+    timestamp: new Date().toISOString(),
+    level: level,
+    message: `Test log message #${logCounter} - ${level.toUpperCase()}`,
+    metadata: {
+      counter: logCounter,
+      uptime: Math.floor(process.uptime()),
+      memoryUsedMB: Math.floor(process.memoryUsage().heapUsed / 1024 / 1024),
+      type: 'interval_log'
+    }
+  }));
+}, 1000);
